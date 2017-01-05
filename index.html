@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test page</title>
+</head>
+<style>
+    html, body, #map {
+        width: 100%; height: 100%; padding: 0; margin: 0;
+    }
+</style>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [55.751574, 37.573856],
+                    zoom: 13,
+                    controls: []
+                });
+                var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                    iconCaption: 'Test test'
+                }, {
+                    preset: 'islands#redCircleDotIconWithCaption'
+                });
+
+                myMap.geoObjects.add(myPlacemark);
+
+            // TODO TODO TODO слушать события загрузки тайлов
+            setTimeout(function () {
+                window.callPhantom && window.callPhantom();
+            }, 2000);
+
+        });
+    </script>
+
+<body>
+    <div id=map></div>
+</body>
+
+</html>

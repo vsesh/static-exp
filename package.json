@@ -1,0 +1,9 @@
+{
+    "description": "New static",
+    "private": true,
+    "dependencies": {
+        "phantom": "3.2.1",
+        "phantom-pool": "1.1.0",
+        "express": "4.14.0"
+    }
+}
